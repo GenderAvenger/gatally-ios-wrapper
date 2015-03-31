@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="605" height="810"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="masthead" translatesAutoresizingMaskIntoConstraints="NO" id="YZ8-30-bBd">
+                    <rect key="frame" x="0.0" y="337" width="605" height="136"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="YZ8-30-bBd" secondAttribute="height" multiplier="89:20" id="tyu-SZ-5bO"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.9215686917" green="0.80000007149999997" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="YZ8-30-bBd" secondAttribute="trailing" id="JqO-TU-Gl0"/>
+                <constraint firstAttribute="centerY" secondItem="YZ8-30-bBd" secondAttribute="centerY" id="Soe-PQ-Ny8"/>
+                <constraint firstItem="YZ8-30-bBd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WWB-Kt-qGJ"/>
+                <constraint firstAttribute="centerX" secondItem="YZ8-30-bBd" secondAttribute="centerX" id="qgk-od-7lt"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="1474.5" y="664"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="masthead" width="1335" height="300"/>
+    </resources>
+</document>
