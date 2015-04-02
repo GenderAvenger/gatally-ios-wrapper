@@ -19,7 +19,7 @@
                         <subviews>
                             <webView contentMode="scaleToFill" misplaced="YES" restorationIdentifier="main-webview" scalesPageToFit="YES" mediaPlaybackAllowsAirPlay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp9-KU-Hqr" userLabel="main-webview">
                                 <rect key="frame" x="89" y="95" width="143" height="411"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.92156869173049927" green="0.80000007152557373" blue="0.44705885648727417" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="xAY-nP-lti"/>
                                 </constraints>
@@ -30,13 +30,18 @@
                                     </mask>
                                 </variation>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="e9U-7e-8AU">
+                                <rect key="frame" x="141" y="265" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.92156869173049927" green="0.80000007152557373" blue="0.44705885648727417" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="lp9-KU-Hqr" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="6bA-b0-pJJ"/>
                             <constraint firstItem="lp9-KU-Hqr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="9Fy-vV-0Bk"/>
-                            <constraint firstAttribute="centerX" secondItem="lp9-KU-Hqr" secondAttribute="centerX" constant="-0.5" id="AWa-nZ-Bg1"/>
+                            <constraint firstAttribute="centerX" secondItem="lp9-KU-Hqr" secondAttribute="centerX" id="AWa-nZ-Bg1"/>
+                            <constraint firstAttribute="centerY" secondItem="e9U-7e-8AU" secondAttribute="centerY" id="C50-GD-Vvv"/>
                             <constraint firstAttribute="centerY" secondItem="lp9-KU-Hqr" secondAttribute="centerY" constant="-16.5" id="mhr-SN-Scj"/>
+                            <constraint firstAttribute="centerX" secondItem="e9U-7e-8AU" secondAttribute="centerX" id="nK4-dC-YDY"/>
                             <constraint firstAttribute="centerX" secondItem="lp9-KU-Hqr" secondAttribute="centerX" id="uvX-5H-8nB"/>
                             <constraint firstAttribute="centerY" secondItem="lp9-KU-Hqr" secondAttribute="centerY" constant="-10" id="vIU-SF-Im7"/>
                             <constraint firstItem="lp9-KU-Hqr" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="z1G-dV-VOW"/>
@@ -51,6 +56,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="e9U-7e-8AU" id="s2Y-Pd-46s"/>
                         <outlet property="mainWebview" destination="lp9-KU-Hqr" id="Sio-eP-rGu"/>
                         <segue destination="Ro7-nm-wJ9" kind="presentation" identifier="loadErrorSegue" id="z9E-Uc-p7G"/>
                     </connections>
