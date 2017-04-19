@@ -11,7 +11,7 @@ import UIKit
 class ErrorViewController: UIViewController {
     
     @IBAction func tryAgainButtonHandler() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

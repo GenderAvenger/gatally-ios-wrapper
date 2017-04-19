@@ -17,17 +17,17 @@ class HomeViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(animated:Bool) {
+    override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
         
         // Hide the loading web view to prevent a flash of loading content
         activityIndicator.startAnimating()
-        mainWebview.hidden = true;
+        mainWebview.isHidden = true;
         
         // Attempt to load GA Tally
-        var urlString:NSString = "http://even-steven-yoni-test.herokuapp.com"
-        var urlObject:NSURL = NSURL(string: urlString)!
-        var urlRequest:NSURLRequest = NSURLRequest(URL: urlObject)
+        let urlString:String = "http://app.genderavenger.com"
+        let urlObject:URL = URL(string: urlString)!
+        let urlRequest:URLRequest = URLRequest(url: urlObject)
         mainWebview.delegate = self
         mainWebview.loadRequest(urlRequest)
         
@@ -38,31 +38,32 @@ class HomeViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func webView(webView: UIWebView!, didFailLoadWithError error: NSError!) {
-        performSegueWithIdentifier("loadErrorSegue", sender: self)
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        performSegue(withIdentifier: "loadErrorSegue", sender: self)
     }
     
-    func webView(webView: UIWebView!, shouldStartLoadWithRequest request: NSURLRequest!, navigationType: UIWebViewNavigationType) -> Bool {
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         // We used injected JS to rewrite any external URLs
-        if(request.URL.absoluteString!.hasPrefix("newtab:")) {
-            var urlString: NSString = (request.URL.absoluteString! as NSString).substringFromIndex(7);
-            var url: NSURL = NSURL(string: urlString)!;
-            UIApplication.sharedApplication().openURL(url);
+        if(request.url!.absoluteString.hasPrefix("newtab:")) {
+            let originalString: String = (request.url?.absoluteString)!
+            let urlString: String = originalString.substring(from: originalString.characters.index(originalString.startIndex, offsetBy: 7))
+            let url: URL = URL(string: urlString)!;
+            UIApplication.shared.openURL(url);
             return false
         }
         return true
     }
     
-    func webViewDidStartLoad(webView: UIWebView!) {    }
+    func webViewDidStartLoad(_ webView: UIWebView) { }
     
-    func webViewDidFinishLoad(webView: UIWebView!) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
         // Show the webview and stop the animation
-        mainWebview.hidden = false;
+        mainWebview.isHidden = false;
         activityIndicator.stopAnimating()
         
         // This is a hack to allow us to detect when a link would open a new tab
-        var JSInjection: NSString = "javascript: var allLinks = document.getElementsByTagName('a'); if (allLinks) {var i;for (i=0; i<allLinks.length; i++) {var link = allLinks[i];var target = link.getAttribute('target'); if (target && target == '_blank') {link.setAttribute('target','_self');link.href = 'newtab:'+link.href;}}}";
-        webView.stringByEvaluatingJavaScriptFromString(JSInjection);
+        let JSInjection: String = "javascript: var allLinks = document.getElementsByTagName('a'); if (allLinks) {var i;for (i=0; i<allLinks.length; i++) {var link = allLinks[i];var target = link.getAttribute('target'); if (target && target == '_blank') {link.setAttribute('target','_self');link.href = 'newtab:'+link.href;}}}";
+        webView.stringByEvaluatingJavaScript(from: JSInjection);
     }
 }
 
