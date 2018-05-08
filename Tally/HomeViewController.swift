@@ -13,6 +13,9 @@ class HomeViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet var mainWebview: UIWebView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
+    // We don't want to refresh every time the view appears
+    var hasLoadedOnce = false;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,17 +23,19 @@ class HomeViewController: UIViewController, UIWebViewDelegate {
     override func viewDidAppear(_ animated:Bool) {
         super.viewDidAppear(animated)
         
-        // Hide the loading web view to prevent a flash of loading content
-        activityIndicator.startAnimating()
-        mainWebview.isHidden = true;
-        
-        // Attempt to load GA Tally
-        let urlString:String = "http://app.genderavenger.com"
-        let urlObject:URL = URL(string: urlString)!
-        let urlRequest:URLRequest = URLRequest(url: urlObject)
-        mainWebview.delegate = self
-        mainWebview.loadRequest(urlRequest)
-        
+        if(hasLoadedOnce == false) {
+            // Hide the loading web view to prevent a flash of loading content
+            activityIndicator.startAnimating()
+            mainWebview.isHidden = true;
+            
+            // Attempt to load GA Tally
+            let urlString:String = "http://app.genderavenger.com"
+            let urlObject:URL = URL(string: urlString)!
+            let urlRequest:URLRequest = URLRequest(url: urlObject)
+            mainWebview.delegate = self
+            mainWebview.loadRequest(urlRequest)
+            hasLoadedOnce = true;
+        }
     }
 
     override func didReceiveMemoryWarning() {
