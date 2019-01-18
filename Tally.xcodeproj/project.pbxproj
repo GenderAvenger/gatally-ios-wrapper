@@ -58,13 +58,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D0D406E71ABF1BF800E33F05 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		D0D406E81ABF1BFE00E33F05 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,20 +74,6 @@
 				D0263CFD1AC465BF008CC352 /* ErrorViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		D0D406EA1ABF1C0700E33F05 /* Stores */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Stores;
-			sourceTree = "<group>";
-		};
-		D0D406EB1ABF1C0D00E33F05 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D0D406EC1ABF1CA000E33F05 /* Resources */ = {
@@ -127,11 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				D0D406EC1ABF1CA000E33F05 /* Resources */,
-				D0D406EB1ABF1C0D00E33F05 /* Helpers */,
-				D0D406EA1ABF1C0700E33F05 /* Stores */,
 				D0D406E91ABF1C0200E33F05 /* Controllers */,
 				D0D406E81ABF1BFE00E33F05 /* Views */,
-				D0D406E71ABF1BF800E33F05 /* Models */,
 				D0E6CF6C1ABF190A00148553 /* AppDelegate.swift */,
 				D0E6CF6A1ABF190A00148553 /* Supporting Files */,
 			);
