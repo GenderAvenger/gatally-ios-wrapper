@@ -189,11 +189,11 @@
 					D0E6CF661ABF190A00148553 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 23BDT63RPY;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1010;
 					};
 					D0E6CF7B1ABF190A00148553 = {
 						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 1010;
 						TestTargetID = D0E6CF661ABF190A00148553;
 					};
 				};
@@ -404,7 +404,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.genderavenger.tally;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -422,7 +423,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.genderavenger.tally;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -443,7 +445,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GA.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tally.app/Tally";
 			};
 			name = Debug;
@@ -460,7 +463,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GA.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tally.app/Tally";
 			};
 			name = Release;

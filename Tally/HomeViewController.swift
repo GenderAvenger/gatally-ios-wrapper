@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, UIWebViewDelegate {
         performSegue(withIdentifier: "loadErrorSegue", sender: self)
     }
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
         // We used injected JS to rewrite any external URLs
         if(request.url!.absoluteString.hasPrefix("newtab:")) {
             let originalString: String = (request.url?.absoluteString)!
