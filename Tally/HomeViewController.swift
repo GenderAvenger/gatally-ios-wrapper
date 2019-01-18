@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Tally
-//
-//  Created by Daniel Schultz on 3/22/15.
-//  Copyright (c) 2015 Gender Avenger. All rights reserved.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController, UIWebViewDelegate {
